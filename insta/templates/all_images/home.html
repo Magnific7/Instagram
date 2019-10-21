@@ -1,0 +1,23 @@
+{%extends 'all_images/base.html'%}
+{% block content %} 
+{{ block.super}}
+
+        <div class='container'>
+
+                <h2 class='card'>Here you go</h2>
+                </div> 
+                <div>
+                        {% for image in images %}
+                                <p>{{image.image_name}}</p>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+                                      </div>
+
+
+                        {% empty %}
+                                <div class="row">
+                                <h2 class="text-center">There Are No Images</h2>
+                                </div>
+                        {% endfor %}
+                </div> 
+{% endblock %}

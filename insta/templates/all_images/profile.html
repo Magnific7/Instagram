@@ -1,0 +1,32 @@
+{%extends 'registration/base.html'%}
+{% load bootstrap3 %}
+ {% load staticfiles %}
+ {% block content %}
+
+    
+  
+ <div class="jumbotron text-center" style="background-color:white;">
+    <h1 style="font-family: 'Oswald', sans-serif;"> Your Profile Page </h1>
+     <img src="{{profile.profile_photo.url}}" class="img-thumbnail" id="eachimage1" style="height:200px;width:150px;"></a>
+    <p style="font-family: 'Oswald', sans-serif;">{{profile.bio}}</p>
+    <button class="btn btn-lg btn-success" style="font-family: 'Oswald', sans-serif;"><a href=" {%url 'update_profile'%}">Edit Profile</a></button>
+    </div>
+
+<div class="container">
+  <div class="card-columns">
+    {% for image in user_images %}
+
+    <div class="card border-secondary"><a href="{% url 'image' image.id %}">
+       
+       
+ <p> Caption : {{ image.image_caption}}</p>
+    
+
+    </div>
+    {% endfor %}
+  </div>
+
+
+    <p><a class="rand" href="{% url 'home' %}">home page</a></p>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{%extends 'all_images/base.html'%}
+{% load bootstrap3 %}
+ {% load staticfiles %}
+ {% block content %}
+
+    
+  
+    <h1>Sup</h1>
+
+    {% for image in user_images%}
+    <h2>{{image.image_name}}</h2>
+    {% endfor%}
+
+    <p><a class="rand" href="{% url 'home' %}">home page</a></p>
+
+{% endblock %}
